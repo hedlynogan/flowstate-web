@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<!--
+  ============================================================================
+  REVIEW BEFORE PUBLISHING. This is a starting draft, not legal advice.
+  • SafelySolo handles sensitive data (contacts, precise location, messaging),
+    so accuracy matters more here. Confirm EVERY statement matches your build.
+  • Fill all [BRACKETED] items: dates, contact email, SMS provider name
+    (you use Twilio — confirm and keep or adjust), analytics SDKs, store URLs.
+  • This must be consistent with BOTH the App Store "App Privacy" label and the
+    Google Play "Data safety" form. Reviewers on both stores check this URL.
+  • Google Play scrutinizes SMS/location permissions closely — describe the
+    user-facing purpose clearly. Have a lawyer review if unsure.
+  ============================================================================
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SafelySolo Privacy Policy — Flow State Technologies</title>
+<meta name="description" content="Privacy policy for the SafelySolo personal-safety app (iOS and Android) by Flow State Technologies.">
+<link rel="canonical" href="https://flowstateconsulting.com/safelysolo/privacy/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../styles.css">
+</head>
+<body>
+
+<header class="masthead">
+  <div class="wrap">
+    <a class="brand" href="../../">
+      <svg class="mark" viewBox="0 0 32 32" aria-hidden="true">
+        <rect width="32" height="32" rx="9" fill="#0F5E5C"/>
+        <path d="M5 20c4 0 4-8 8-8s4 8 8 8 4-8 6-8" fill="none" stroke="#CFE4E1" stroke-width="2.4" stroke-linecap="round"/>
+        <path d="M5 24c4 0 4-8 8-8s4 8 8 8 4-8 6-8" fill="none" stroke="#3E9B93" stroke-width="2.4" stroke-linecap="round"/>
+      </svg>
+      Flow&nbsp;State
+    </a>
+    <nav class="navlinks" aria-label="Sections">
+      <a href="../../#mycaddyman">MyCaddyMan</a>
+      <a href="../../#safelysolo">SafelySolo</a>
+      <a href="../../terms/">Terms</a>
+    </nav>
+  </div>
+</header>
+
+<main class="doc">
+  <div class="doc-head">
+    <p class="eyebrow">SafelySolo <span class="dot">·</span> iOS &amp; Android</p>
+    <h1>Privacy Policy</h1>
+    <div class="doc-meta">
+      <span><b>Last updated:</b> [ADD DATE — e.g. July 1, 2026]</span>
+      <span><b>Applies to:</b> SafelySolo for iOS and Android</span>
+    </div>
+
+    <nav class="toc" aria-label="Contents">
+      <p>Contents</p>
+      <ol>
+        <li><a href="#collect">What we collect</a></li>
+        <li><a href="#use">How we use it</a></li>
+        <li><a href="#checkin">Location &amp; check-ins</a></li>
+        <li><a href="#contacts">Trusted contacts &amp; SMS</a></li>
+        <li><a href="#share">Sharing</a></li>
+        <li><a href="#storage">Storage &amp; retention</a></li>
+        <li><a href="#choices">Your choices</a></li>
+        <li><a href="#children">Children</a></li>
+        <li><a href="#security">Security</a></li>
+        <li><a href="#thirdparty">Third-party services</a></li>
+        <li><a href="#rights">Regional rights</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ol>
+    </nav>
+  </div>
+
+  <div class="doc-body">
+    <p>SafelySolo ("the app") is a personal-safety app developed by Flow State Technologies ("we," "us"). It lets you set a check-in timer before doing something alone; if you don't check in, the app notifies contacts you've chosen and shares your location with them. Because that involves sensitive information, this policy is specific about what happens and when.</p>
+
+    <div class="callout">
+      <!-- EDIT: confirm this summary matches your build, especially the SMS provider. -->
+      In short: the contacts you pick and your location are used to send a safety alert <strong>only when a check-in lapses or you trigger one</strong>, and that alert goes <strong>only to the contacts you chose</strong>. Text messages are delivered through a third-party messaging provider. We don't sell your data.
+    </div>
+
+    <h2 id="collect"><span class="n">1</span>What we collect</h2>
+    <ul>
+      <li><strong>Trusted contacts you add.</strong> The names and phone numbers you designate as safety contacts, so the app can alert them. [CONFIRM how contacts are added — typed in manually, or chosen from the device contact picker.]</li>
+      <li><strong>Your location.</strong> Accessed to include your position in a safety alert. See <a href="#checkin">Location &amp; check-ins</a>.</li>
+      <li><strong>Your phone number / identity.</strong> [CONFIRM: does the app store your own number or any account identifier? If there's no account, say so.]</li>
+      <li><strong>Check-in and timer activity.</strong> The timers you set and whether you checked in, so the app knows when to send an alert.</li>
+      <li><strong>Diagnostic &amp; usage data.</strong> [CONFIRM: crash logs or analytics, and the tool used — e.g. Firebase Crashlytics, TelemetryDeck — or state that none is collected.]</li>
+    </ul>
+
+    <h2 id="use"><span class="n">2</span>How we use it</h2>
+    <p>We use this information solely to provide the safety features you asked for: to run your check-in timers, and — if a timer lapses or you start an alert — to send your chosen contacts a message that includes your location. We do not use your information for advertising, and we do not sell it.</p>
+
+    <h2 id="checkin"><span class="n">3</span>Location &amp; check-ins</h2>
+    <p>Your location is central to what SafelySolo does. Here's exactly how it's handled:</p>
+    <ul>
+      <li>The app reads your location [CONFIRM: at the moment an alert is sent / continuously while a check-in timer is running — describe what's true, since it affects which permission you request].</li>
+      <li>Your location is included in the alert sent to your trusted contacts so they know where you are.</li>
+      <li>[CONFIRM: state whether your location is ever stored on a server or only passed through at send time. "Not stored on our servers" is a strong, reviewer-friendly statement if true.]</li>
+      <li>You control location through the standard iOS/Android permission and can change or revoke it in system settings. Core safety features won't work without it.</li>
+    </ul>
+
+    <h2 id="contacts"><span class="n">4</span>Trusted contacts &amp; message delivery</h2>
+    <p>The contacts you designate receive an alert only when a check-in lapses or you trigger one. To deliver text messages, the app uses a third-party messaging provider,
+      <!-- EDIT: you use Twilio for SafelySolo SMS — confirm and keep, or replace with your actual provider. -->
+      [Twilio], which processes the recipient's phone number and the message content (including your location) only to transmit the message on our behalf. Their handling of that data is governed by their own privacy terms. We do not use your contacts' information for any other purpose, and we don't add them to any marketing.</p>
+
+    <h2 id="share"><span class="n">5</span>Sharing</h2>
+    <p>We do not sell personal information. Information is shared only in these limited ways: with the trusted contacts <em>you</em> choose (when an alert is sent); with service providers that help operate the app, such as our messaging provider [Twilio] and the platform services from Apple and Google; and where required by law or to protect safety. Service providers act on our instructions for the purposes described here.</p>
+
+    <h2 id="storage"><span class="n">6</span>Storage &amp; retention</h2>
+    <p>[CONFIRM based on your build:] Your trusted contacts and settings are stored [on your device / in your account] so the app can function. Location data is [used only at send time and not retained / retained for X]. Message delivery records may be retained briefly by our messaging provider as part of sending. We keep information only as long as needed to provide the service or as required by law.</p>
+
+    <h2 id="choices"><span class="n">7</span>Your choices</h2>
+    <ul>
+      <li><strong>Contacts:</strong> add or remove trusted contacts anytime in the app.</li>
+      <li><strong>Location &amp; SMS permissions:</strong> manage or revoke in iOS or Android system settings. The app will tell you which permissions its safety features need.</li>
+      <li><strong>Your data:</strong> delete your saved contacts and settings in the app, or remove all app data by uninstalling. [Adjust to match your actual deletion flow; Google Play may require an account-deletion path if accounts exist.]</li>
+    </ul>
+
+    <h2 id="children"><span class="n">8</span>Children's privacy</h2>
+    <p>SafelySolo is intended for users 13 and older and is not directed to children under 13. We do not knowingly collect personal information from children under 13. If you believe a child has provided us information, contact us and we will address it.</p>
+
+    <h2 id="security"><span class="n">9</span>Security</h2>
+    <p>We take reasonable measures to protect your information, including the security protections built into iOS and Android and encrypted transmission to our messaging provider. No method of storage or transmission is completely secure, so we cannot guarantee absolute security.</p>
+
+    <h2 id="thirdparty"><span class="n">10</span>Third-party services</h2>
+    <p>[CONFIRM and list only what you use, with links to their policies:] SafelySolo relies on a messaging provider ([Twilio]) to send text alerts, on Apple and Google for app distribution and system services, and [on any maps or analytics provider you include]. Each processes data under its own privacy policy.</p>
+
+    <h2 id="rights"><span class="n">11</span>Regional privacy rights</h2>
+    <p>Depending on where you live, you may have rights to access, correct, delete, or restrict use of your personal information (for example under the California Consumer Privacy Act or the EU/UK GDPR). You can exercise many of these directly by managing or deleting your data in the app. For any request, contact us below and we'll respond as required by applicable law.</p>
+
+    <h2 id="contact"><span class="n">12</span>Contact</h2>
+    <p>Questions about this policy or your data? Contact Flow State Technologies at
+      <!-- EDIT: set your real support address -->
+      <a href="mailto:privacy@flowstateconsulting.com">privacy@flowstateconsulting.com</a>.</p>
+
+    <p class="stamp">We may update this policy as the app evolves; the "Last updated" date above reflects the current version.</p>
+
+    <a class="backlink" href="../../">← Back to Flow State Technologies</a>
+  </div>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="fine">
+      <span>© <span id="yr">2026</span> Flow State Technologies. All rights reserved.</span>
+      <span><a href="../../">flowstateconsulting.com</a></span>
+    </div>
+  </div>
+</footer>
+<script>document.getElementById('yr').textContent = new Date().getFullYear();</script>
+</body>
+</html>
