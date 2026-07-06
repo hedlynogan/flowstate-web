@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TestFlight: Premium Live & Signal Fix (July 2, 2026) — SafelySolo</title>
+<meta name="description" content="What to test in the SafelySolo Premium-live TestFlight build from July 2, 2026.">
+<link rel="canonical" href="https://flowstateconsulting.com/safelysolo/testflight/2026-07-02-premium-live/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../../styles.css">
+</head>
+<body>
+
+<header class="masthead">
+  <div class="wrap">
+    <a class="brand" href="../../../">
+      <svg class="mark" viewBox="0 0 32 32" aria-hidden="true">
+        <rect width="32" height="32" rx="9" fill="#0F5E5C"/>
+        <path d="M5 20c4 0 4-8 8-8s4 8 8 8 4-8 6-8" fill="none" stroke="#CFE4E1" stroke-width="2.4" stroke-linecap="round"/>
+        <path d="M5 24c4 0 4-8 8-8s4 8 8 8 4-8 6-8" fill="none" stroke="#3E9B93" stroke-width="2.4" stroke-linecap="round"/>
+      </svg>
+      Flow&nbsp;State&nbsp;Technologies
+    </a>
+    <nav class="navlinks" aria-label="Sections">
+      <a href="../../../#mycaddyman">MyCaddyMan</a>
+      <a href="../../../#safelysolo">SafelySolo</a>
+      <a href="../../../terms/">Terms</a>
+    </nav>
+  </div>
+</header>
+
+<main class="doc">
+  <div class="doc-head">
+    <p class="eyebrow">SafelySolo <span class="dot">·</span> TestFlight</p>
+    <h1>What to Test (2026-07-02)</h1>
+    <div class="doc-meta">
+      <span><b>Build:</b> Premium Live & Signal Fix</span>
+      <span><b>Date:</b> July 2, 2026</span>
+    </div>
+  </div>
+
+  <div class="doc-body">
+    <div class="callout">
+      <strong>Build Focus:</strong> Premium purchases are now active (sandbox) and trip tracking is improved for weak GPS signals.
+    </div>
+
+    <h2>1. Premium Subscription is Live (Sandbox)</h2>
+    <p>Purchases now run in Apple's sandbox: <strong>no real money is ever charged</strong>.</p>
+    <ul>
+      <li>Go to Settings → Premium (or tap a locked feature) → <strong>Start Free Trial</strong>.</li>
+      <li>Complete the purchase → features should unlock immediately.</li>
+      <li>Test <strong>Restore Purchases</strong> after a reinstall.</li>
+    </ul>
+
+    <h2>2. Improved Tracking in Weak GPS Signal</h2>
+    <p>The app now keeps tracking with reduced accuracy instead of stopping in "dead zones."</p>
+    <ul>
+      <li>Look for the <strong>orange "weak GPS signal" indicator</strong> in the map header.</li>
+      <li>Test a trip through a known poor-signal spot (canyons, tall buildings, dense trees).</li>
+      <li>Confirm the map trail keeps updating and the trip completes correctly.</li>
+    </ul>
+
+    <h2>3. Premium Trip Cards (New)</h2>
+    <p>With Premium active, AI Safety Briefing and Route Weather cards appear automatically during trip review.</p>
+    <ul>
+      <li>Confirm <strong>Route Weather</strong> loads real forecasts.</li>
+      <li>Test the <strong>Disable</strong> button on cards (they should stay off until re-enabled in Settings).</li>
+    </ul>
+
+    <h3>Feedback we want</h3>
+    <ol>
+      <li>Did the trial/purchase flow feel smooth and trustworthy?</li>
+      <li>Did tracking hold up in your known dead zones?</li>
+      <li>Did weather load correctly?</li>
+    </ol>
+
+    <a class="backlink" href="../">← Back to TestFlight Index</a>
+  </div>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="fine">
+      <span>© <span id="yr">2026</span> Flow State Technologies. All rights reserved.</span>
+      <span><a href="../../../">flowstateconsulting.com</a></span>
+    </div>
+  </div>
+</footer>
+<script>document.getElementById('yr').textContent = new Date().getFullYear();</script>
+</body>
+</html>

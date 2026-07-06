@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TestFlight: Trip Rework (June 28, 2026) — SafelySolo</title>
+<meta name="description" content="What to test in the SafelySolo TestFlight build from June 28, 2026.">
+<link rel="canonical" href="https://flowstateconsulting.com/safelysolo/testflight/2026-06-28/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../../styles.css">
+</head>
+<body>
+
+<header class="masthead">
+  <div class="wrap">
+    <a class="brand" href="../../../">
+      <svg class="mark" viewBox="0 0 32 32" aria-hidden="true">
+        <rect width="32" height="32" rx="9" fill="#0F5E5C"/>
+        <path d="M5 20c4 0 4-8 8-8s4 8 8 8 4-8 6-8" fill="none" stroke="#CFE4E1" stroke-width="2.4" stroke-linecap="round"/>
+        <path d="M5 24c4 0 4-8 8-8s4 8 8 8 4-8 6-8" fill="none" stroke="#3E9B93" stroke-width="2.4" stroke-linecap="round"/>
+      </svg>
+      Flow&nbsp;State&nbsp;Technologies
+    </a>
+    <nav class="navlinks" aria-label="Sections">
+      <a href="../../../#mycaddyman">MyCaddyMan</a>
+      <a href="../../../#safelysolo">SafelySolo</a>
+      <a href="../../../terms/">Terms</a>
+    </nav>
+  </div>
+</header>
+
+<main class="doc">
+  <div class="doc-head">
+    <p class="eyebrow">SafelySolo <span class="dot">·</span> TestFlight</p>
+    <h1>What to Test (2026-06-28)</h1>
+    <div class="doc-meta">
+      <span><b>Build:</b> Trip Rework</span>
+      <span><b>Date:</b> June 28, 2026</span>
+    </div>
+  </div>
+
+  <div class="doc-body">
+    <div class="callout">
+      <strong>Build Focus:</strong> Trip start/destination rework and P0 tracking/geofence fixes.
+    </div>
+
+    <h2>What changed in this build</h2>
+    <ul>
+      <li><strong>Removed</strong> the "Starting point: Home / Current Location" toggle. A trip now <strong>always starts from your current location</strong>; Home/Stay/Favorites/Recents are <strong>destinations</strong>.</li>
+      <li>New one-tap <strong>Trip Home</strong> and <strong>Round trip from here</strong> (destination-less, for hikes/walks).</li>
+      <li><strong>P0 fixes:</strong> destination-less round trips now track + complete; geofences fire reliably via live GPS.</li>
+    </ul>
+
+    <h2>What to Test</h2>
+    <p>This build reworks how trips start and how arrival is detected. Please test the different trip modes on a <strong>real device</strong>, with Location set to <strong>"Always,"</strong> and actually move so geofences trigger.</p>
+
+    <h3>★ Trip modes — the focus of this build ★</h3>
+    <p>Every trip starts from your current location. Test each mode and confirm it <strong>auto-completes on arrival</strong>:</p>
+    <ol>
+      <li><strong>Trip Home</strong> — tap Trip Home. Confirm time + contacts → Start. Head home → it should complete automatically when you arrive.</li>
+      <li><strong>Round trip from here</strong> — tap Round trip from here. Set a "be back by" time + contacts → Start. Leave the area, then return → it should complete when you're back.</li>
+      <li><strong>One-way to a destination</strong> — tap Start a Trip, search a destination, leave it as One Way → Start. Arrive → completes.</li>
+      <li><strong>Named round trip</strong> — Start a Trip, pick a destination, choose Round Trip → Start. Go to the destination, then back to your start → completes.</li>
+    </ol>
+
+    <h3>Onboarding & Safety Path</h3>
+    <ul>
+      <li><strong>Fresh Install:</strong> Test the "Set Up Safety" screen (Location + Contacts).</li>
+      <li><strong>No Contacts:</strong> Verify you are prompted to add a contact before starting a trip.</li>
+      <li><strong>Safety Path:</strong> Don't check in by the deadline → verify the check-in overlay appears and contacts are alerted if you don't respond.</li>
+    </ul>
+
+    <a class="backlink" href="../">← Back to TestFlight Index</a>
+  </div>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="fine">
+      <span>© <span id="yr">2026</span> Flow State Technologies. All rights reserved.</span>
+      <span><a href="../../../">flowstateconsulting.com</a></span>
+    </div>
+  </div>
+</footer>
+<script>document.getElementById('yr').textContent = new Date().getFullYear();</script>
+</body>
+</html>

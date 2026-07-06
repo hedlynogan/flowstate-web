@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TestFlight: SafelySolo Premium (June 30, 2026) — SafelySolo</title>
+<meta name="description" content="What to test in the SafelySolo Premium TestFlight build from June 30, 2026.">
+<link rel="canonical" href="https://flowstateconsulting.com/safelysolo/testflight/2026-06-30-premium/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../../styles.css">
+</head>
+<body>
+
+<header class="masthead">
+  <div class="wrap">
+    <a class="brand" href="../../../">
+      <svg class="mark" viewBox="0 0 32 32" aria-hidden="true">
+        <rect width="32" height="32" rx="9" fill="#0F5E5C"/>
+        <path d="M5 20c4 0 4-8 8-8s4 8 8 8 4-8 6-8" fill="none" stroke="#CFE4E1" stroke-width="2.4" stroke-linecap="round"/>
+        <path d="M5 24c4 0 4-8 8-8s4 8 8 8 4-8 6-8" fill="none" stroke="#3E9B93" stroke-width="2.4" stroke-linecap="round"/>
+      </svg>
+      Flow&nbsp;State&nbsp;Technologies
+    </a>
+    <nav class="navlinks" aria-label="Sections">
+      <a href="../../../#mycaddyman">MyCaddyMan</a>
+      <a href="../../../#safelysolo">SafelySolo</a>
+      <a href="../../../terms/">Terms</a>
+    </nav>
+  </div>
+</header>
+
+<main class="doc">
+  <div class="doc-head">
+    <p class="eyebrow">SafelySolo <span class="dot">·</span> TestFlight</p>
+    <h1>What to Test (2026-06-30)</h1>
+    <div class="doc-meta">
+      <span><b>Build:</b> Premium Intro</span>
+      <span><b>Date:</b> June 30, 2026</span>
+    </div>
+  </div>
+
+  <div class="doc-body">
+    <div class="callout">
+      <strong>Build Focus:</strong> Introduces <strong>SafelySolo Premium</strong> (subscription tier) and the Free vs Premium split.
+    </div>
+
+    <p>⚠️ <strong>Known limitation:</strong> Subscribing is <strong>not active yet</strong> in this build. Tapping "Start Free Trial" will show <em>"Subscription product is not available."</em> Just explore the difference for now.</p>
+
+    <h2>What to Test</h2>
+    <p>This build introduces SafelySolo Premium. Please focus on understanding <strong>what's Free vs Premium</strong> and whether the split is clear and fair.</p>
+
+    <h3>Free — Works without a subscription</h3>
+    <ul>
+      <li>Create and run trips (one-way, Round trip from here, Trip Home).</li>
+      <li>Live tracking, automatic arrival, and check-in reminders.</li>
+      <li>Adding trusted contacts.</li>
+      <li><strong>If you miss a check-in:</strong> Prompted to text contacts from your own Messages.</li>
+      <li>Siri: Check in / extend / cancel an active trip.</li>
+    </ul>
+
+    <h3>Premium — Shows a lock / "Premium" badge</h3>
+    <ul>
+      <li><strong>Automatic alerts:</strong> SafelySolo texts contacts automatically if you miss a check-in.</li>
+      <li><strong>AI safety briefing</strong> + "Draft with AI" message.</li>
+      <li><strong>Route weather.</strong></li>
+      <li><strong>Trusted Safety Contacts</strong> (consent / opt-in).</li>
+      <li><strong>Hands-free trip start</strong> via Siri.</li>
+    </ul>
+
+    <h3>Please Check</h3>
+    <ol>
+      <li>Are <strong>AI</strong>, <strong>Route weather</strong>, and <strong>Automatic alerts</strong> clearly marked Premium (locked rows)?</li>
+      <li>Does the <strong>Premium upsell</strong> appear and clearly list the benefits when tapping a locked feature?</li>
+      <li>Is it obvious what you get <strong>Free vs Premium</strong>?</li>
+      <li>Does Siri prompt to go Premium when trying to start a trip via voice?</li>
+    </ol>
+
+    <a class="backlink" href="../">← Back to TestFlight Index</a>
+  </div>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="fine">
+      <span>© <span id="yr">2026</span> Flow State Technologies. All rights reserved.</span>
+      <span><a href="../../../">flowstateconsulting.com</a></span>
+    </div>
+  </div>
+</footer>
+<script>document.getElementById('yr').textContent = new Date().getFullYear();</script>
+</body>
+</html>

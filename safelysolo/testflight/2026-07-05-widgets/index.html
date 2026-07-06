@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TestFlight: Home & Lock Screen Widgets (July 5, 2026) — SafelySolo</title>
+<meta name="description" content="What to test in the SafelySolo Widgets TestFlight build from July 5, 2026.">
+<link rel="canonical" href="https://flowstateconsulting.com/safelysolo/testflight/2026-07-05-widgets/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../../styles.css">
+</head>
+<body>
+
+<header class="masthead">
+  <div class="wrap">
+    <a class="brand" href="../../../">
+      <svg class="mark" viewBox="0 0 32 32" aria-hidden="true">
+        <rect width="32" height="32" rx="9" fill="#0F5E5C"/>
+        <path d="M5 20c4 0 4-8 8-8s4 8 8 8 4-8 6-8" fill="none" stroke="#CFE4E1" stroke-width="2.4" stroke-linecap="round"/>
+        <path d="M5 24c4 0 4-8 8-8s4 8 8 8 4-8 6-8" fill="none" stroke="#3E9B93" stroke-width="2.4" stroke-linecap="round"/>
+      </svg>
+      Flow&nbsp;State&nbsp;Technologies
+    </a>
+    <nav class="navlinks" aria-label="Sections">
+      <a href="../../../#mycaddyman">MyCaddyMan</a>
+      <a href="../../../#safelysolo">SafelySolo</a>
+      <a href="../../../terms/">Terms</a>
+    </nav>
+  </div>
+</header>
+
+<main class="doc">
+  <div class="doc-head">
+    <p class="eyebrow">SafelySolo <span class="dot">·</span> TestFlight</p>
+    <h1>What to Test (2026-07-05)</h1>
+    <div class="doc-meta">
+      <span><b>Build:</b> Home & Lock Screen Widgets</span>
+      <span><b>Date:</b> July 5, 2026</span>
+    </div>
+  </div>
+
+  <div class="doc-body">
+    <div class="callout">
+      <strong>Build Focus:</strong> Introduces Home Screen and Lock Screen widgets (Trip Status + Quick Start).
+    </div>
+
+    <p>Open the app once before adding widgets. Note: A full setup guide for widgets is available in the tutorials section.</p>
+
+    <h2>1. Adding the Widgets</h2>
+    <ul>
+      <li><strong>Home Screen:</strong> Long-press empty spot → Edit/+ → search "SafelySolo" → add TRIP STATUS (small/med) and QUICK START (med/large).</li>
+      <li><strong>Lock Screen:</strong> Long-press Lock Screen → Customize → Lock Screen → add circle/rectangle widgets below the clock.</li>
+    </ul>
+
+    <h2>2. Trip Status Widget</h2>
+    <ul>
+      <li>Start a trip → verify the widget shows destination, arrival time, and a <strong>LIVE countdown</strong>.</li>
+      <li>Check for "Deadline Soon" (orange) and "Deadline Passed" (red) states.</li>
+      <li>Verify the widget resets to "Start a trip" after checking in safe.</li>
+    </ul>
+
+    <h2>3. Quick Start Widget</h2>
+    <ul>
+      <li>Tap Trip Home / Round Trip / Place → verify the app opens with the trip details pre-filled.</li>
+      <li>Verify the widget shows a compact countdown when a trip is active.</li>
+    </ul>
+
+    <h3>Known Issue</h3>
+    <p>If a trip completes via arrival detection while the app is in the background, the widget may keep counting down until the app is opened. We're investigating.</p>
+
+    <h3>Feedback we want</h3>
+    <ol>
+      <li>Did the countdown stay accurate with the app closed?</li>
+      <li>Did the widget reset promptly after you checked in?</li>
+      <li>Are the Quick Start tiles the places you'd actually want?</li>
+    </ol>
+
+    <a class="backlink" href="../">← Back to TestFlight Index</a>
+  </div>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="fine">
+      <span>© <span id="yr">2026</span> Flow State Technologies. All rights reserved.</span>
+      <span><a href="../../../">flowstateconsulting.com</a></span>
+    </div>
+  </div>
+</footer>
+<script>document.getElementById('yr').textContent = new Date().getFullYear();</script>
+</body>
+</html>

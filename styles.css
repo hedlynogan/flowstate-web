@@ -178,7 +178,7 @@ a:hover { color: var(--tide-deep); }
 .store b { display: block; font-size: 0.95rem; font-weight: 700; letter-spacing: -0.01em; }
 .store span { display: block; font-size: 0.66rem; opacity: 0.82; text-transform: uppercase; letter-spacing: 0.06em; }
 .card-links { margin-top: 1.3rem; font-size: var(--step--1); }
-.card-links a { font-weight: 600; }
+.card-links a { font-weight: 600; line-height: 1.5; }
 
 /* Phone / screenshot placeholders ---------------------------------------- */
 .shots { display: flex; gap: 1rem; justify-content: center; }

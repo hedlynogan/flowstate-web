@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SafelySolo Beta Guide & Tutorial — Flow State Technologies</title>
+<meta name="description" content="Tutorial, tips, and tricks for the SafelySolo Beta. Learn how to set up check-in timers and trusted contacts.">
+<link rel="canonical" href="https://flowstateconsulting.com/safelysolo/beta/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../styles.css">
+</head>
+<body>
+
+<header class="masthead">
+  <div class="wrap">
+    <a class="brand" href="../../">
+      <svg class="mark" viewBox="0 0 32 32" aria-hidden="true">
+        <rect width="32" height="32" rx="9" fill="#0F5E5C"/>
+        <path d="M5 20c4 0 4-8 8-8s4 8 8 8 4-8 6-8" fill="none" stroke="#CFE4E1" stroke-width="2.4" stroke-linecap="round"/>
+        <path d="M5 24c4 0 4-8 8-8s4 8 8 8 4-8 6-8" fill="none" stroke="#3E9B93" stroke-width="2.4" stroke-linecap="round"/>
+      </svg>
+      Flow&nbsp;State&nbsp;Technologies
+    </a>
+    <nav class="navlinks" aria-label="Sections">
+      <a href="../../#mycaddyman">MyCaddyMan</a>
+      <a href="../../#safelysolo">SafelySolo</a>
+      <a href="../testflight/">TestFlight</a>
+      <a href="../../terms/">Terms</a>
+    </nav>
+  </div>
+</header>
+
+<main class="doc">
+  <div class="doc-head">
+    <p class="eyebrow">SafelySolo <span class="dot">·</span> Beta Guide</p>
+    <h1>Getting Started with the SafelySolo Beta</h1>
+    <div class="doc-meta">
+      <span><b>Version:</b> 1.0 Beta</span>
+      <span><b>Applies to:</b> iOS & Android</span>
+    </div>
+
+    <nav class="toc" aria-label="Contents">
+      <p>In this guide</p>
+      <ol>
+        <li><a href="#how-it-works">How SafelySolo works</a></li>
+        <li><a href="#setup">Initial setup</a></li>
+        <li><a href="#timer">Setting your first timer</a></li>
+        <li><a href="#contacts">Managing contacts</a></li>
+        <li><a href="#widgets">Home Screen Widgets</a></li>
+        <li><a href="#voice">Siri & Voice Support</a></li>
+        <li><a href="#tips">Tips & Tricks</a></li>
+        <li><a href="../testflight/">TestFlight build history</a></li>
+        <li><a href="#feedback">Providing feedback</a></li>
+      </ol>
+    </nav>
+  </div>
+
+  <div class="doc-body">
+    <p>Welcome to the SafelySolo beta! We're building a tool that helps you stay safe while adventuring alone—whether it's a sunrise hike, a late-night run, or just a solo walk to your car. This guide will help you get the most out of the app.</p>
+
+    <div class="callout">
+      <strong>Beta Note:</strong> SafelySolo is currently in active development. While core safety features are functional, you may encounter minor bugs. Please do not rely on SafelySolo as your <em>only</em> safety measure during the beta period.
+    </div>
+
+    <h2 id="how-it-works"><span class="n">1</span>How SafelySolo works</h2>
+    <p>SafelySolo is built on a simple "dead man's switch" principle:</p>
+    <ul>
+      <li>You set a timer for your activity.</li>
+      <li>If you reach your destination or finish your task, you <strong>Check In</strong> to stop the timer.</li>
+      <li>If the timer expires before you check in, the app automatically sends an SMS to your trusted contacts with your last known location.</li>
+    </ul>
+
+    <h2 id="setup"><span class="n">2</span>Initial setup</h2>
+    <p>To function correctly, SafelySolo needs two key permissions:</p>
+    <h3>Location Services</h3>
+    <p>Set this to <strong>"Always Allow"</strong> (or "While Using" on some versions). The app needs to know your location at the moment a timer expires so it can tell your contacts where you are. We do not track you when a timer isn't running.</p>
+    <h3>Notifications</h3>
+    <p>Enable notifications so SafelySolo can warn you when your timer is about to expire. This gives you a chance to check in or extend the timer before an alert is sent.</p>
+
+    <h2 id="timer"><span class="n">3</span>Setting your first timer</h2>
+    <p>When you start a solo activity:</p>
+    <ol>
+        <li>Choose a duration that covers your expected activity plus a small buffer (e.g., if a hike takes 60 minutes, set the timer for 75).</li>
+        <li>Tap <strong>Start Timer</strong>.</li>
+        <li>You can lock your phone and go. The app runs in the background.</li>
+        <li>When you're safe, open the app and tap <strong>Check In</strong>.</li>
+    </ol>
+
+    <h2 id="contacts"><span class="n">4</span>Managing trusted contacts</h2>
+    <p>Go to the <strong>Contacts</strong> tab to add people you trust.</p>
+    <ul>
+        <li>We recommend adding 2–3 people who are likely to be near their phones.</li>
+        <li><strong>Pro Tip:</strong> Use the "Send Test Alert" feature to let your contacts know what a SafelySolo text looks like. This prevents unnecessary panic when they see a real alert.</li>
+    </ul>
+
+    <h2 id="widgets"><span class="n">5</span>Home Screen Widgets</h2>
+    <p>SafelySolo supports iOS and Android widgets so you can start or stop a timer without digging for the app icon.</p>
+    <ul>
+      <li><strong>Small Widget:</strong> Shows your current status or the time remaining on an active check-in.</li>
+      <li><strong>Medium Widget:</strong> Provides quick-start buttons for common timer lengths (e.g., 15m, 30m, 1h).</li>
+      <li><strong>To add:</strong> Long-press your home screen, tap the (+) or "Widgets" button, and search for SafelySolo.</li>
+    </ul>
+
+    <h2 id="voice"><span class="n">6</span>Siri & Voice Support</h2>
+    <p>Powered by App Intents, SafelySolo allows you to manage your safety hands-free—perfect for when you're already on the move or wearing gloves.</p>
+    <ul>
+      <li><strong>"Siri, start a 30-minute check-in with SafelySolo."</strong></li>
+      <li><strong>"Siri, check in with SafelySolo."</strong> (Stops the active timer)</li>
+      <li><strong>"Siri, add 15 minutes to my SafelySolo timer."</strong></li>
+    </ul>
+    <p>On Android, you can use similar commands with Google Assistant to trigger these actions.</p>
+
+    <h2 id="tips"><span class="n">7</span>Tips & Tricks</h2>
+    <ul>
+      <li><strong>Extend the clock:</strong> If your hike is taking longer than expected, you can tap "Add 15 Minutes" to your active timer without having to stop and restart it.</li>
+      <li><strong>Low Battery Mode:</strong> SafelySolo is optimized for battery life, but keep an eye on your levels during long activities. If your phone dies, the app cannot send an alert at the expiration time (alerts are triggered by the server if the check-in is missed, provided the phone had signal when the timer was started).</li>
+      <li><strong>Signal Check:</strong> Ensure you have a cellular connection when you <em>start</em> the timer so the SafelySolo server knows you're out there.</li>
+    </ul>
+
+    <h2 id="feedback"><span class="n">8</span>Providing feedback</h2>
+    <p>Your feedback is vital to making SafelySolo better. If you find a bug or have a feature suggestion, please email us at <a href="mailto:hello@flowstateconsulting.com">hello@flowstateconsulting.com</a> with "Beta Feedback" in the subject line.</p>
+
+    <a class="backlink" href="../../">← Back to Flow State Technologies</a>
+  </div>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="fine">
+      <span>© <span id="yr">2026</span> Flow State Technologies. All rights reserved.</span>
+      <span><a href="../../">flowstateconsulting.com</a></span>
+    </div>
+  </div>
+</footer>
+<script>document.getElementById('yr').textContent = new Date().getFullYear();</script>
+</body>
+</html>
