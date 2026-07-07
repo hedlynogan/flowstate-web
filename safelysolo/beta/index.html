@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>SafelySolo Beta Guide & Tutorial — Flow State Technologies</title>
-<meta name="description" content="Tutorial, tips, and tricks for the SafelySolo Beta. Learn how to set up check-in timers and trusted contacts.">
+<meta name="description" content="Tutorial, tips, and tricks for the SafelySolo iOS beta. Learn how trips, check-ins, trusted contacts, and Premium features work.">
 <link rel="canonical" href="https://flowstateconsulting.com/safelysolo/beta/">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -38,7 +38,8 @@
     <h1>Getting Started with the SafelySolo Beta</h1>
     <div class="doc-meta">
       <span><b>Version:</b> 1.0 Beta</span>
-      <span><b>Applies to:</b> iOS & Android</span>
+      <span><b>Applies to:</b> iOS (TestFlight)</span>
+      <span><b>Last updated:</b> July 7, 2026</span>
     </div>
 
     <nav class="toc" aria-label="Contents">
@@ -46,11 +47,13 @@
       <ol>
         <li><a href="#how-it-works">How SafelySolo works</a></li>
         <li><a href="#setup">Initial setup</a></li>
-        <li><a href="#timer">Setting your first timer</a></li>
+        <li><a href="#trips">Starting a trip</a></li>
         <li><a href="#contacts">Managing contacts</a></li>
-        <li><a href="#widgets">Home Screen Widgets</a></li>
-        <li><a href="#voice">Siri & Voice Support</a></li>
-        <li><a href="#tips">Tips & Tricks</a></li>
+        <li><a href="#premium">Free vs Premium</a></li>
+        <li><a href="#widgets">Widgets</a></li>
+        <li><a href="#voice">Siri &amp; Voice Support</a></li>
+        <li><a href="#tips">Tips &amp; Tricks</a></li>
+        <li><a href="#joining">Joining the beta</a></li>
         <li><a href="../testflight/">TestFlight build history</a></li>
         <li><a href="#feedback">Providing feedback</a></li>
       </ol>
@@ -61,32 +64,37 @@
     <p>Welcome to the SafelySolo beta! We're building a tool that helps you stay safe while adventuring alone—whether it's a sunrise hike, a late-night run, or just a solo walk to your car. This guide will help you get the most out of the app.</p>
 
     <div class="callout">
-      <strong>Beta Note:</strong> SafelySolo is currently in active development. While core safety features are functional, you may encounter minor bugs. Please do not rely on SafelySolo as your <em>only</em> safety measure during the beta period.
+      <strong>Beta Note:</strong> SafelySolo is currently in active development. While core safety features are functional, you may encounter bugs. Please do not rely on SafelySolo as your <em>only</em> safety measure during the beta period.
+      <br><br>
+      The beta currently runs on <strong>iOS via TestFlight</strong>. An Android version is in development but is not yet at feature parity, so this guide describes the iOS app. For what's new in the latest build, see <a href="../testflight/2026-07-05-widgets/">What to Test — July 5, 2026 (Widgets)</a>.
     </div>
 
     <h2 id="how-it-works"><span class="n">1</span>How SafelySolo works</h2>
-    <p>SafelySolo is built on a simple "dead man's switch" principle:</p>
+    <p>SafelySolo is built around <strong>trips</strong>. Every trip starts from your current location:</p>
     <ul>
-      <li>You set a timer for your activity.</li>
-      <li>If you reach your destination or finish your task, you <strong>Check In</strong> to stop the timer.</li>
-      <li>If the timer expires before you check in, the app automatically sends an SMS to your trusted contacts with your last known location.</li>
+      <li>You start a trip—to a destination, back home, or a round trip from where you are—with a check-in deadline.</li>
+      <li>SafelySolo tracks the trip live and <strong>completes it automatically when you arrive</strong>. You can also <strong>Check In</strong> manually at any time.</li>
+      <li>If your deadline passes without a check-in, a check-in overlay appears. If you don't respond, your trusted contacts are alerted with your last known location—on the free tier you're prompted to text them from your own Messages app; with <a href="#premium">Premium</a>, SafelySolo texts them automatically.</li>
     </ul>
 
     <h2 id="setup"><span class="n">2</span>Initial setup</h2>
-    <p>To function correctly, SafelySolo needs two key permissions:</p>
+    <p>On first launch, the <strong>Set Up Safety</strong> screen walks you through the two things SafelySolo needs:</p>
     <h3>Location Services</h3>
-    <p>Set this to <strong>"Always Allow"</strong> (or "While Using" on some versions). The app needs to know your location at the moment a timer expires so it can tell your contacts where you are. We do not track you when a timer isn't running.</p>
+    <p>Set this to <strong>"Always"</strong>. Live tracking and automatic arrival detection rely on geofences, which only work reliably with Always access. We do not track you when no trip is running.</p>
+    <h3>Trusted contacts</h3>
+    <p>Add at least one trusted contact—you'll be prompted before your first trip if you haven't. See <a href="#contacts">Managing contacts</a> below.</p>
     <h3>Notifications</h3>
-    <p>Enable notifications so SafelySolo can warn you when your timer is about to expire. This gives you a chance to check in or extend the timer before an alert is sent.</p>
+    <p>Enable notifications so SafelySolo can remind you when your check-in deadline is approaching. This gives you a chance to check in or extend the deadline before an alert is sent.</p>
 
-    <h2 id="timer"><span class="n">3</span>Setting your first timer</h2>
-    <p>When you start a solo activity:</p>
-    <ol>
-        <li>Choose a duration that covers your expected activity plus a small buffer (e.g., if a hike takes 60 minutes, set the timer for 75).</li>
-        <li>Tap <strong>Start Timer</strong>.</li>
-        <li>You can lock your phone and go. The app runs in the background.</li>
-        <li>When you're safe, open the app and tap <strong>Check In</strong>.</li>
-    </ol>
+    <h2 id="trips"><span class="n">3</span>Starting a trip</h2>
+    <p>Every trip starts from your current location. There are four ways to go:</p>
+    <ul>
+      <li><strong>Trip Home:</strong> One tap. Confirm your time and contacts, head home, and the trip completes automatically when you arrive.</li>
+      <li><strong>Round trip from here:</strong> For hikes, runs, and walks with no fixed destination. Set a "be back by" time; the trip completes when you return to your starting area.</li>
+      <li><strong>One-way to a destination:</strong> Tap <strong>Start a Trip</strong>, search for a destination, and go. The trip completes on arrival.</li>
+      <li><strong>Named round trip:</strong> Pick a destination and choose <strong>Round Trip</strong>. Go there and back; the trip completes when you return to your start.</li>
+    </ul>
+    <p>Set your "be back by" time with a small buffer (e.g., if a hike takes 60 minutes, allow 75). You can always check in early—or extend from the app or widget if you're running long.</p>
 
     <h2 id="contacts"><span class="n">4</span>Managing trusted contacts</h2>
     <p>Go to the <strong>Contacts</strong> tab to add people you trust.</p>
@@ -95,31 +103,61 @@
         <li><strong>Pro Tip:</strong> Use the "Send Test Alert" feature to let your contacts know what a SafelySolo text looks like. This prevents unnecessary panic when they see a real alert.</li>
     </ul>
 
-    <h2 id="widgets"><span class="n">5</span>Home Screen Widgets</h2>
-    <p>SafelySolo supports iOS and Android widgets so you can start or stop a timer without digging for the app icon.</p>
+    <h2 id="premium"><span class="n">5</span>Free vs Premium</h2>
+    <p>SafelySolo's core safety loop is free. Premium adds automation and intelligence on top.</p>
+    <h3>Free</h3>
     <ul>
-      <li><strong>Small Widget:</strong> Shows your current status or the time remaining on an active check-in.</li>
-      <li><strong>Medium Widget:</strong> Provides quick-start buttons for common timer lengths (e.g., 15m, 30m, 1h).</li>
-      <li><strong>To add:</strong> Long-press your home screen, tap the (+) or "Widgets" button, and search for SafelySolo.</li>
+      <li>All trip modes: one-way, Trip Home, and round trips.</li>
+      <li>Live tracking, automatic arrival detection, and check-in reminders.</li>
+      <li>Trusted contacts. If you miss a check-in, you're prompted to text them from your own Messages app.</li>
+      <li>Siri: check in, extend, or cancel an active trip.</li>
+    </ul>
+    <h3>Premium</h3>
+    <ul>
+      <li><strong>Automatic alerts:</strong> SafelySolo texts your contacts automatically if you miss a check-in—no action needed from you or your phone.</li>
+      <li><strong>AI safety briefing</strong> and "Draft with AI" messages.</li>
+      <li><strong>Route weather</strong> forecasts on your trip cards.</li>
+      <li><strong>Trusted Safety Contacts</strong> (consent/opt-in).</li>
+      <li><strong>Hands-free trip start</strong> via Siri.</li>
+    </ul>
+    <div class="callout">
+      <strong>Beta testers:</strong> Premium purchases run in Apple's sandbox during the beta—<strong>no real money is ever charged</strong>. Go to Settings → Premium and tap Start Free Trial to try it. Please test Restore Purchases after a reinstall too.
+    </div>
+
+    <h2 id="widgets"><span class="n">6</span>Widgets</h2>
+    <p>SafelySolo has Home Screen and Lock Screen widgets so you can start or monitor a trip without digging for the app icon. Open the app once before adding widgets.</p>
+    <ul>
+      <li><strong>Trip Status (small/medium):</strong> Shows your destination, arrival time, and a live countdown—turning orange when your deadline is soon and red when it has passed. Resets to "Start a trip" after you check in safe.</li>
+      <li><strong>Quick Start (medium/large):</strong> One-tap tiles for Trip Home, Round Trip, and your saved Places; shows a compact countdown while a trip is active.</li>
+      <li><strong>Lock Screen:</strong> Long-press your Lock Screen → Customize → add the circle or rectangle SafelySolo widgets below the clock.</li>
+      <li><strong>To add (Home Screen):</strong> Long-press an empty spot, tap the (+) or "Edit" button, and search for SafelySolo.</li>
+    </ul>
+    <div class="callout">
+      <strong>Known issue:</strong> If a trip completes via arrival detection while the app is in the background, the widget may keep counting down until you open the app. We're investigating.
+    </div>
+
+    <h2 id="voice"><span class="n">7</span>Siri &amp; Voice Support</h2>
+    <p>Powered by App Intents, SafelySolo lets you manage an active trip hands-free—perfect for when you're already on the move or wearing gloves.</p>
+    <ul>
+      <li><strong>"Siri, check in with SafelySolo."</strong> (Completes the active trip)</li>
+      <li><strong>"Siri, add 15 minutes to my SafelySolo trip."</strong></li>
+      <li><strong>"Siri, cancel my SafelySolo trip."</strong></li>
+    </ul>
+    <p><strong>Starting</strong> a trip by voice (e.g., "Siri, start a trip home with SafelySolo") is a <a href="#premium">Premium</a> feature.</p>
+
+    <h2 id="tips"><span class="n">8</span>Tips &amp; Tricks</h2>
+    <ul>
+      <li><strong>Extend the clock:</strong> If your hike is taking longer than expected, extend your deadline from the app or widget without having to cancel and restart the trip.</li>
+      <li><strong>Start with signal:</strong> Make sure you have a cellular connection when you <em>start</em> a trip so the SafelySolo server knows you're out there.</li>
+      <li><strong>Weak GPS:</strong> In dead zones (canyons, tall buildings, dense trees), SafelySolo keeps tracking with reduced accuracy instead of stopping—look for the orange "weak GPS signal" indicator in the map header.</li>
+      <li><strong>Battery:</strong> SafelySolo is optimized for battery life, but keep an eye on your levels during long activities. With Premium, automatic alerts are triggered by the server, so a missed check-in still alerts your contacts even if your phone dies mid-trip (provided the trip was started with signal). On the free tier, your phone must be alive for you to send the alert text.</li>
     </ul>
 
-    <h2 id="voice"><span class="n">6</span>Siri & Voice Support</h2>
-    <p>Powered by App Intents, SafelySolo allows you to manage your safety hands-free—perfect for when you're already on the move or wearing gloves.</p>
-    <ul>
-      <li><strong>"Siri, start a 30-minute check-in with SafelySolo."</strong></li>
-      <li><strong>"Siri, check in with SafelySolo."</strong> (Stops the active timer)</li>
-      <li><strong>"Siri, add 15 minutes to my SafelySolo timer."</strong></li>
-    </ul>
-    <p>On Android, you can use similar commands with Google Assistant to trigger these actions.</p>
+    <h2 id="joining"><span class="n">9</span>Joining the beta</h2>
+    <p>The SafelySolo beta is currently <strong>invite-only</strong>. If you've received a beta invitation email, follow its TestFlight link and make sure you have the <strong>TestFlight</strong> app installed on your iPhone. Want an invite? Email <a href="mailto:hello@flowstateconsulting.com">hello@flowstateconsulting.com</a> with "Beta Invite" in the subject line.</p>
+    <p>Already testing? Check the <a href="../testflight/">TestFlight build history</a> for what to test in each build.</p>
 
-    <h2 id="tips"><span class="n">7</span>Tips & Tricks</h2>
-    <ul>
-      <li><strong>Extend the clock:</strong> If your hike is taking longer than expected, you can tap "Add 15 Minutes" to your active timer without having to stop and restart it.</li>
-      <li><strong>Low Battery Mode:</strong> SafelySolo is optimized for battery life, but keep an eye on your levels during long activities. If your phone dies, the app cannot send an alert at the expiration time (alerts are triggered by the server if the check-in is missed, provided the phone had signal when the timer was started).</li>
-      <li><strong>Signal Check:</strong> Ensure you have a cellular connection when you <em>start</em> the timer so the SafelySolo server knows you're out there.</li>
-    </ul>
-
-    <h2 id="feedback"><span class="n">8</span>Providing feedback</h2>
+    <h2 id="feedback"><span class="n">10</span>Providing feedback</h2>
     <p>Your feedback is vital to making SafelySolo better. If you find a bug or have a feature suggestion, please email us at <a href="mailto:hello@flowstateconsulting.com">hello@flowstateconsulting.com</a> with "Beta Feedback" in the subject line.</p>
 
     <a class="backlink" href="../../">← Back to Flow State Technologies</a>
