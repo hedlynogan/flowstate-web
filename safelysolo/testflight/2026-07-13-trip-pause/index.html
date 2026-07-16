@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TestFlight: Trip Pause + Round Trip (July 13, 2026) — SafelySolo</title>
+<meta name="description" content="What to test in the SafelySolo Trip Pause + Round Trip TestFlight build from July 13, 2026.">
+<link rel="canonical" href="https://flowstateconsulting.com/safelysolo/testflight/2026-07-13-trip-pause/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../../styles.css">
+</head>
+<body>
+
+<header class="masthead">
+  <div class="wrap">
+    <a class="brand" href="../../../">
+      <svg class="mark" viewBox="0 0 32 32" aria-hidden="true">
+        <rect width="32" height="32" rx="9" fill="#0F5E5C"/>
+        <path d="M5 20c4 0 4-8 8-8s4 8 8 8 4-8 6-8" fill="none" stroke="#CFE4E1" stroke-width="2.4" stroke-linecap="round"/>
+        <path d="M5 24c4 0 4-8 8-8s4 8 8 8 4-8 6-8" fill="none" stroke="#3E9B93" stroke-width="2.4" stroke-linecap="round"/>
+      </svg>
+      Flow&nbsp;State&nbsp;Technologies
+    </a>
+    <nav class="navlinks" aria-label="Sections">
+      <a href="../../../#mycaddyman">MyCaddyMan</a>
+      <a href="../../../#safelysolo">SafelySolo</a>
+      <a href="../../../terms/">Terms</a>
+    </nav>
+  </div>
+</header>
+
+<main class="doc">
+  <div class="doc-head">
+    <p class="eyebrow">SafelySolo <span class="dot">·</span> TestFlight</p>
+    <h1>What to Test (2026-07-13)</h1>
+    <div class="doc-meta">
+      <span><b>Build:</b> Trip Pause + Round Trip</span>
+      <span><b>Date:</b> July 13, 2026</span>
+    </div>
+  </div>
+
+  <div class="doc-body">
+    <div class="callout">
+      <strong>Build Focus:</strong> Introduces Trip Pause, one-tap Round Trips with a duration prompt, and a cluster of trip-creation fixes.
+    </div>
+
+    <p>This build adds TRIP PAUSE and smarter ROUND TRIPS, plus fixes to how trips home get their time and location.</p>
+
+    <h2>TRIP PAUSE (new — please hammer this one)</h2>
+    <ul>
+      <li>During any trip, choose <strong>PAUSE 1 HOUR</strong> wherever you can extend (the check-in screen, the extend sheet, or a deadline notification)</li>
+      <li>Your deadline moves out an hour and the widget shows Paused</li>
+      <li>Let a pause <strong>RUN OUT</strong> without touching the app → you should get the normal check-in countdown and then the alert flow — never a silently ended trip</li>
+      <li>Premium: your emergency contact timing follows the pause too</li>
+    </ul>
+
+    <h2>ROUND TRIP — ONE TAP, OUT AND BACK</h2>
+    <ul>
+      <li>Tap the Round Trip tile → pick how long you’ll be (30 m / 1 h / 2 h / 4 h or dial your own) → Start</li>
+      <li>The button says “Getting your location…” until the phone has a <strong>FRESH</strong> fix — the trip must anchor to where you ARE, not where you last had signal</li>
+      <li>Try it right after driving somewhere: the return point should be your real starting spot</li>
+      <li>Trips are capped at 24 hours — for longer adventures, start a new trip</li>
+    </ul>
+
+    <h2>TRIP HOME — NOW ALWAYS ONE-WAY WITH A REAL ETA</h2>
+    <ul>
+      <li>Tap Trip Home (or pick Home inside the new-trip screen) → it’s a <strong>ONE-WAY</strong> trip and the arrival time comes from the actual travel time — watch the caption under the time pickers say where the suggestion came from</li>
+      <li>Set a time by hand, then wait a few seconds → your time must <strong>NOT</strong> get replaced by the suggestion</li>
+      <li>Arriving at home should <strong>COMPLETE</strong> the trip (no lingering countdown afterwards!)</li>
+      <li>Just finished a trip somewhere else? Start a Trip Home right after — the drive time should be from where you are now, not from where that last trip ended</li>
+    </ul>
+
+    <h2>NEW TRIP SCREEN — REORDERED</h2>
+    <p>Destination first (with Home & Favorites quick picks), then Round Trip / One Way, then travel mode, and the arrival time appears <strong>LAST</strong> — only once there’s something to base it on.</p>
+
+    <h2>STILL IN THIS BUILD (from last release)</h2>
+    <p>Home/Lock Screen widgets (Trip Status + Quick Start), Premium subscription with 1-week free trial (sandbox — you will NOT be billed), Route Weather + AI briefing cards.</p>
+
+    <h3>Feedback we want</h3>
+    <ul>
+      <li>Did a paused trip ever end silently or alert at the wrong time?</li>
+      <li>Did any trip anchor to the wrong spot or suggest a nonsense arrival time?</li>
+      <li>Did your hand-set time ever get overwritten?</li>
+      <li>Anything confusing in the new trip screen order?</li>
+    </ul>
+
+    <a class="backlink" href="../">← Back to TestFlight Index</a>
+  </div>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="fine">
+      <span>© <span id="yr">2026</span> Flow State Technologies. All rights reserved.</span>
+      <span><a href="../../../">flowstateconsulting.com</a></span>
+    </div>
+  </div>
+</footer>
+<script>document.getElementById('yr').textContent = new Date().getFullYear();</script>
+</body>
+</html>
