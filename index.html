@@ -27,6 +27,7 @@
       <a href="#apps">Apps</a>
       <a href="#mycaddyman">MyCaddyMan</a>
       <a href="#safelysolo">SafelySolo</a>
+      <a href="#beta">Beta</a>
       <a href="safelysolo/testflight/">TestFlight</a>
       <a href="terms/">Terms</a>
     </nav>
@@ -40,20 +41,34 @@
       <h1>Small, focused apps that <span class="flow">stay out of your way</span>.</h1>
       <p class="lede">An independent mobile studio building iOS and Android tools with care — from the tee box to the trailhead. Here you'll find quick help, setup tips, and the privacy details for each app.</p>
       <div class="hero-actions">
-        <a class="btn btn-primary" href="#mycaddyman">Explore MyCaddyMan</a>
-        <a class="btn btn-ghost" href="#safelysolo">Explore SafelySolo</a>
+        <a class="btn btn-primary" href="#beta">Join SafelySolo Beta</a>
+        <a class="btn btn-ghost" href="#apps">View our apps</a>
       </div>
     </div>
   </section>
 
-  <div class="wrap" aria-hidden="true">
-    <svg class="current" viewBox="0 0 1200 26" preserveAspectRatio="none">
-      <path d="M0 13 C 150 2, 300 24, 450 13 S 750 2, 900 13 S 1200 24, 1200 13"/>
-      <path class="lead" d="M0 13 C 150 2, 300 24, 450 13 S 750 2, 900 13 S 1200 24, 1200 13"/>
-    </svg>
-  </div>
+    <div class="wrap" aria-hidden="true">
+      <svg class="current" viewBox="0 0 1200 26" preserveAspectRatio="none">
+        <path d="M0 13 C 150 2, 300 24, 450 13 S 750 2, 900 13 S 1200 24, 1200 13"/>
+        <path class="lead" d="M0 13 C 150 2, 300 24, 450 13 S 750 2, 900 13 S 1200 24, 1200 13"/>
+      </svg>
+    </div>
 
-  <section class="section" id="apps">
+    <section class="section section-beta" id="beta">
+      <div class="wrap">
+        <p class="eyebrow">SafelySolo Beta</p>
+        <div class="beta-promo">
+          <h2>Ready to test SafelySolo?</h2>
+          <p>We're looking for early testers to help us refine the experience. Sign the NDA to get started.</p>
+          <div class="beta-promo-actions">
+            <a class="btn btn-primary" href="https://safetysolo.web.app/nda/" target="_blank" rel="noopener">Sign the NDA →</a>
+            <a class="btn btn-ghost" href="#safelysolo">Learn more about the beta</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="apps">
     <div class="wrap">
       <p class="eyebrow">The apps</p>
       <div class="apps">
@@ -126,11 +141,22 @@
                 <b>Google Play<span>Get it on</span></b>
               </a>
             </div>
-            <p class="card-links">
-              <a href="safelysolo/beta/">Beta guide &amp; tutorial →</a><br>
-              <a href="safelysolo/testflight/">TestFlight build history →</a><br>
-              <a href="safelysolo/privacy/">SafelySolo privacy policy →</a>
-            </p>
+
+            <div class="beta-links" id="safelysolo-beta">
+              <div class="nda-gate" id="nda-gate">
+                <p><strong>Join the Beta:</strong> Before you can access the beta guide and builds, you must sign the SafelySolo NDA.</p>
+                <div class="nda-actions">
+                  <a class="btn btn-primary" href="https://safetysolo.web.app/nda/" target="_blank" rel="noopener">Sign the NDA on Firebase →</a>
+                  <button class="btn btn-ghost" onclick="revealBetaLinks()">I've signed the NDA</button>
+                </div>
+              </div>
+              
+              <div class="beta-revealed" id="beta-content" style="display: none;">
+                <a href="safelysolo/beta/">Beta guide &amp; tutorial</a>
+                <a href="safelysolo/testflight/">TestFlight build history</a>
+                <a href="safelysolo/privacy/">Privacy policy</a>
+              </div>
+            </div>
           </div>
           <div class="shots">
             <div class="phone tilt">
@@ -200,6 +226,24 @@
   </div>
 </footer>
 
-<script>document.getElementById('yr').textContent = new Date().getFullYear();</script>
+<script>
+  document.getElementById('yr').textContent = new Date().getFullYear();
+  
+  function revealBetaLinks() {
+    document.getElementById('nda-gate').style.display = 'none';
+    document.getElementById('beta-content').style.display = 'grid';
+    localStorage.setItem('ss_nda_signed', 'true');
+  }
+
+  // Check if NDA was already signed
+  if (localStorage.getItem('ss_nda_signed') === 'true') {
+    const gate = document.getElementById('nda-gate');
+    const content = document.getElementById('beta-content');
+    if (gate && content) {
+      gate.style.display = 'none';
+      content.style.display = 'grid';
+    }
+  }
+</script>
 </body>
 </html>

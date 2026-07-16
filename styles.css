@@ -180,6 +180,61 @@ a:hover { color: var(--tide-deep); }
 .card-links { margin-top: 1.3rem; font-size: var(--step--1); }
 .card-links a { font-weight: 600; line-height: 1.5; }
 
+/* Beta promotion section -------------------------------------------------- */
+.section-beta {
+  background: var(--paper-2);
+  border-bottom: 1px solid var(--line);
+  padding-block: clamp(3rem, 6vw, 5rem);
+}
+.beta-promo {
+  max-width: var(--measure);
+}
+.beta-promo h2 {
+  font-size: var(--step-2);
+  color: var(--ink);
+  margin: 0.5rem 0 1rem;
+}
+.beta-promo p {
+  font-family: var(--read);
+  font-size: var(--step-1);
+  color: var(--ink-2);
+  margin-bottom: 1.5rem;
+}
+.beta-promo-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+/* Beta gating and links -------------------------------------------------- */
+.beta-links {
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--line);
+  text-align: center;
+}
+.nda-gate p {
+  font-size: var(--step--1);
+  color: var(--ink-2);
+  margin-bottom: 1.2rem;
+}
+.beta-revealed {
+  display: grid;
+  gap: 1.2rem;
+  justify-items: center;
+}
+.beta-revealed a {
+  font-size: var(--step-1);
+  font-weight: 700;
+  text-decoration: none;
+  color: var(--tide);
+  transition: color 0.15s ease;
+}
+.beta-revealed a:hover {
+  color: var(--tide-deep);
+  text-decoration: underline;
+}
+
 /* Phone / screenshot placeholders ---------------------------------------- */
 .shots { display: flex; gap: 1rem; justify-content: center; }
 .phone {
