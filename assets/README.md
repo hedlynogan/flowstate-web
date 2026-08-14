@@ -8,7 +8,6 @@ Add your real app screenshots and swap them into `index.html` where the phone
 placeholders are (search the file for `ph-note`). Suggested names:
 
 - `mycaddyman-01.png`, `mycaddyman-02.png`
-- `safelysolo-01.png`, `safelysolo-02.png`
 
 Replace a placeholder block like this:
 
