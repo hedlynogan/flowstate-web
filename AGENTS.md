@@ -6,8 +6,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 `flowstateconsulting.com` — a static marketing + legal site for **Flow State
 Technologies**, home to app privacy policies, terms, screenshots, and usage tips
-for two apps: **MyCaddyMan** (iOS golf app) and **SafelySolo** (iOS/Android
-personal-safety app). Plain HTML + one shared CSS file. No build step, no
+for **MyCaddyMan** (iOS golf app). Plain HTML + one shared CSS file. No build step, no
 dependencies, no JS framework. Served by GitHub Pages from `main` at the repo root.
 
 ## Working in it
@@ -26,10 +25,9 @@ dependencies, no JS framework. Served by GitHub Pages from `main` at the repo ro
   tokens. Change design tokens here, not in individual pages. The recurring
   "current" motif (a thin animated wave line) is the signature element.
 - **Each legal page lives in its own folder so its published URL is clean and
-  stable** — these URLs get pasted into App Store / Play Store listings, so the
+  stable** — these URLs get pasted into App Store listings, so the
   paths are load-bearing and must not change:
   - `mycaddyman/privacy/index.html` → `/mycaddyman/privacy/`
-  - `safelysolo/privacy/index.html` → `/safelysolo/privacy/`
   - `terms/index.html` → `/terms/`
 - **All internal links are relative**, so the site works identically at the
   `github.io` project URL and at the custom domain. Keep them relative.
@@ -44,8 +42,8 @@ The privacy and terms pages are **starting drafts, not legal advice**, and the
 landing page has placeholder content. Both carry inline `<!-- EDIT: -->` /
 `REVIEW BEFORE PUBLISHING` comments marking what's unfinished:
 
-- `[BRACKETED]` placeholders (dates, contact email, store URLs, SMS provider) must be filled in.
-- Store links point at `#REPLACE_APP_STORE_URL` / `#REPLACE_PLAY_STORE_URL`; store buttons are plain placeholders, not the official Apple/Google badges.
-- Data-practice statements must match what each app actually does, and stay consistent with the App Store "App Privacy" label and Google Play "Data safety" form. SafelySolo (contacts, precise location, SMS) is the sensitive one — accuracy matters most there.
+- `[BRACKETED]` placeholders (dates, contact email, store URL) must be filled in.
+- Store link points at `#REPLACE_APP_STORE_URL`; store button is a plain placeholder, not the official Apple badge.
+- Data-practice statements must match what the app actually does, and stay consistent with the App Store "App Privacy" label.
 
 See `README.md` for the full pre-publish checklist and custom-domain / DNS / email migration steps.

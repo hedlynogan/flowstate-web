@@ -1,29 +1,27 @@
 # flowstateconsulting.com
 
 Static website for Flow State Technologies — a home for app privacy policies,
-legal, screenshots, and usage tips for **MyCaddyMan** and **SafelySolo**, with
-links out to the App Store and Google Play. No build step, no dependencies:
+legal, screenshots, and usage tips for **MyCaddyMan**, with
+links out to the App Store. No build step, no dependencies:
 plain HTML + one CSS file, served by GitHub Pages.
 
 ## Structure
 
 ```
 .
-├── index.html                    # Landing: hero, both apps, tips, store links
+├── index.html                    # Landing: hero, app, tips, store links
 ├── styles.css                    # Shared design system (whole site)
 ├── 404.html                      # Branded not-found page
 ├── .nojekyll                     # Serve files as-is (skip Jekyll)
 ├── assets/                       # Screenshots + official store badges (see its README)
 ├── mycaddyman/privacy/index.html # → /mycaddyman/privacy/
-├── safelysolo/privacy/index.html # → /safelysolo/privacy/
 └── terms/index.html              # → /terms/
 ```
 
 Each policy lives in its own folder so the published URL is clean and stable —
-which is exactly what you paste into the store listings:
+which is exactly what you paste into the store listing:
 
 - App Store Connect (MyCaddyMan) → `https://flowstateconsulting.com/mycaddyman/privacy/`
-- App Store Connect + Play Console (SafelySolo) → `https://flowstateconsulting.com/safelysolo/privacy/`
 
 ## Deploy (free, public repo)
 
@@ -67,19 +65,15 @@ to move `flowstateconsulting.com`:
 The privacy and terms pages are **starting drafts, not legal advice.** Each file
 has a review note at the top of its source. Work through this:
 
-- [ ] Replace every `[BRACKETED]` placeholder (dates, contact email, store URLs).
+- [ ] Replace every `[BRACKETED]` placeholder (dates, contact email, store URL).
 - [ ] Confirm each data-practice statement matches what the app actually does.
 - [ ] MyCaddyMan: confirm whether round data stays on-device or syncs; name any
       analytics/crash SDK, or state there's none.
-- [ ] SafelySolo: confirm the SMS provider (drafted as **Twilio**), whether
-      location is stored or only passed at send time, and the contacts flow.
-- [ ] Make each policy consistent with the App Store "App Privacy" label and
-      (SafelySolo) the Google Play "Data safety" form.
+- [ ] Make the policy consistent with the App Store "App Privacy" label.
 - [ ] Set a real contact address (`privacy@` / `hello@`) that you monitor.
-- [ ] Replace the placeholder store buttons with the official Apple / Google
-      badges and real listing URLs (see `assets/README.md`).
+- [ ] Replace the placeholder store buttons with the official Apple badge and real listing URL (see `assets/README.md`).
 - [ ] Drop in real screenshots (see `assets/README.md`).
-- [ ] Consider a lawyer's review, especially SafelySolo's terms and liability.
+- [ ] Consider a lawyer's review, especially terms and liability.
 
 ## Notes
 
